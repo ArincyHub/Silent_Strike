@@ -1,0 +1,26 @@
+WHERE TO EDIT (HTML5 + JS, no React)
+
+  src/game/config.js     timers, map size, swing
+  src/game/items.js      loot items + bomb damage
+  src/game/loadout.js    5 characters, 5 swords, unlock kills
+  src/game/guide.js      GUIDE page words
+  src/game/engine.js     fighting code (leave unless you change combat)
+  src/game/sprites.js    how pictures load (leave)
+  src/game/audio.js      sounds
+  src/main.js            menu buttons
+  index.html             pages / buttons on screen
+  src/style.css          look / size
+
+ASSETS (just drop files, keep the names)
+
+  public/sprites/player.png
+  public/sprites/enemy1.png
+  public/sprites/sword.png
+  public/sprites/chars/char1.png ... char5.png
+  public/sprites/weapons/weapon1.png ... weapon5.png
+  public/sprites/items/bomb.png
+  public/sprites/items/reveal.png
+  public/sprites/items/heal.png
+  public/sprites/items/speed.png
+  public/sprites/items/shield.png
+  public/audio/menu.mp3

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="screen-orientation" content="landscape" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Silent Strike</title>
+  </head>
+  <body>
+    <div class="rotate-gate pixel">
+      <b>TURN</b>
+      <span>PHONE</span>
+      <p>This game needs landscape</p>
+    </div>
+
+    <!-- MENU -->
+    <div id="screen-menu" class="screen on">
+      <div class="wrap pixel">
+        <div class="title">SILENT<span>STRIKE</span></div>
+        <div class="chars" id="menu-chars"></div>
+        <div class="menu-stack">
+          <button class="pbtn green" data-go="play"><img class="btn-ico" src="/icons/play.png" alt="">PLAY</button>
+          <button class="pbtn grey" data-go="loadout"><img class="btn-ico" src="/icons/loadout.png" alt="">LOADOUT</button>
+          <button class="pbtn grey" data-go="guide"><img class="btn-ico" src="/icons/guide.png" alt="">GUIDE</button>
+          <div class="icons">
+            <button class="ico" data-go="settings" title="SETTINGS">
+              <img class="btn-ico" src="/icons/settings.png" alt="">
+            </button>
+            <button class="ico" data-go="socials" title="SOCIALS">
+              <img class="btn-ico" src="/icons/socials.png" alt="">
+            </button>
+          </div>
+        </div>
+        <p class="hint">5 FIGHTERS - LAST ONE LIVES</p>
+      </div>
+    </div>
+
+    <!-- LOADOUT -->
+    <div id="screen-loadout" class="screen">
+      <div class="panel pixel">
+        <h2>LOADOUT</h2>
+        <p id="stats-line">KILLS 0 - WINS 0</p>
+        <div class="tabs">
+          <button class="pbtn green grow" id="tab-char"><img class="btn-ico" src="/icons/char.png" alt="">CHAR</button>
+          <button class="pbtn grey grow" id="tab-sword"><img class="btn-ico" src="/icons/sword.png" alt="">SWORD</button>
+        </div>
+        <div id="loadout-grid" class="grid"></div>
+        <button class="pbtn grey full" data-go="menu" style="margin-top:12px"><img class="btn-ico" src="/icons/back.png" alt="">BACK</button>
+      </div>
+    </div>
+
+    <!-- GUIDE -->
+    <div id="screen-guide" class="screen">
+      <div class="panel pixel" id="guide-box"></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="screen-settings" class="screen">
+      <div class="panel pixel">
+        <h2>SETTINGS</h2>
+        <p>VOLUME <span id="vol-num">70</span></p>
+        <input id="vol" type="range" min="0" max="100" value="70" />
+        <div class="row" style="align-items:center;justify-content:space-between">
+          <span class="h">SOUND RINGS</span>
+          <button class="pbtn green" id="ripples">ON</button>
+        </div>
+        <p class="h">ENEMIES</p>
+        <div class="row">
+          <button class="pbtn grey grow diff" data-d="easy">EASY</button>
+          <button class="pbtn green grow diff" data-d="normal">NORMAL</button>
+          <button class="pbtn grey grow diff" data-d="hard">HARD</button>
+        </div>
+        <button class="pbtn grey full" data-go="menu"><img class="btn-ico" src="/icons/back.png" alt="">BACK</button>
+      </div>
+    </div>
+
+    <!-- SOCIALS -->
+    <div id="screen-socials" class="screen">
+      <div class="panel pixel">
+        <h2>SOCIALS</h2>
+        <a class="link" href="https://discord.com" target="_blank" rel="noreferrer">DISCORD</a>
+        <a class="link" href="https://youtube.com" target="_blank" rel="noreferrer">YOUTUBE</a>
+        <a class="link" href="https://roblox.com" target="_blank" rel="noreferrer">ROBLOX</a>
+        <button class="pbtn grey full" data-go="menu"><img class="btn-ico" src="/icons/back.png" alt="">BACK</button>
+      </div>
+    </div>
+
+    <!-- GAME -->
+    <div id="screen-game" class="screen">
+      <div id="game-wrap">
+        <canvas id="game" width="320" height="180"></canvas>
+        <button class="hud-fs" id="btn-fs" title="FULLSCREEN">
+          <img class="btn-ico" src="/icons/fullscreen.png" alt="">
+        </button>
+        <div class="controls" id="controls">
+          <div class="stick" id="stick"><div class="knob" id="knob"></div></div>
+          <div class="btns">
+            <button class="circle small" id="btn-sneak"><img class="btn-ico" src="/icons/sneak.png" alt=""><span>SNEAK</span></button>
+            <div class="act">
+              <button class="circle small" id="btn-skill"><img class="btn-ico" src="/icons/skill.png" alt=""><span>SKILL</span></button>
+              <button class="circle hit" id="btn-hit"><img class="btn-ico" src="/icons/hit.png" alt=""><span>HIT</span></button>
+            </div>
+          </div>
+        </div>
+        <button class="pbtn grey hud-pause" id="btn-pause"><img class="btn-ico" src="/icons/pause.png" alt="">PAUSE</button>
+        <div class="overlay" id="pause-ov">
+          <h2>PAUSED</h2>
+          <button class="pbtn green" id="btn-resume"><img class="btn-ico" src="/icons/play.png" alt="">RESUME</button>
+          <button class="pbtn grey" data-go="menu"><img class="btn-ico" src="/icons/back.png" alt="">MENU</button>
+        </div>
+        <div class="overlay" id="end-ov">
+          <h2 id="end-title">YOU WIN</h2>
+          <p id="end-sub"></p>
+          <button class="pbtn green" id="btn-again"><img class="btn-ico" src="/icons/play.png" alt="">AGAIN</button>
+          <button class="pbtn grey" data-go="menu"><img class="btn-ico" src="/icons/back.png" alt="">MENU</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
