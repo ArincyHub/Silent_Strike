@@ -170,16 +170,16 @@ input[type="range"]::-webkit-slider-thumb {
 
 .hud-fs {
   position: absolute;
-  top: 8px;
-  left: 92px;
+  top: 10px;
+  left: 1150px;
   z-index: 5;
   width: 36px;
   height: 28px;
-  padding: 0;
+  padding: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #c3c9cf;
+  background: #504718;
   border: 4px solid #0a0f0a;
   box-shadow: 4px 4px 0 #0a0f0a;
   cursor: pointer;

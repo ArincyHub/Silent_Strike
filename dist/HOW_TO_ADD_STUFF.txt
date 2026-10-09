@@ -1,0 +1,50 @@
+SILENT STRIKE - where to put your stuff
+=======================================
+
+1) YOUR CHARACTER PICTURES
+   Put PNG files here:
+
+   public/sprites/chars/char1.png
+   public/sprites/chars/char2.png
+   public/sprites/chars/char3.png
+   public/sprites/chars/char4.png
+   public/sprites/chars/char5.png
+
+   Use a MAGENTA background (#FF00FF). The game cuts that color out.
+
+2) YOUR SWORD PICTURES
+   public/sprites/weapons/weapon1.png
+   public/sprites/weapons/weapon2.png
+   public/sprites/weapons/weapon3.png
+   public/sprites/weapons/weapon4.png
+   public/sprites/weapons/weapon5.png
+
+3) YOUR ITEM PICTURES
+   public/sprites/items/bomb.png
+   public/sprites/items/reveal.png
+   public/sprites/items/heal.png
+   public/sprites/items/speed.png
+   public/sprites/items/shield.png
+
+4) CHANGE UNLOCKS (how many kills / wins)
+   File:  src/game/loadout.ts
+   Look for  CHARACTERS  and  WEAPONS
+   Change  need: { kills: 10, wins: 0 }
+   Example: weapon 2 unlocks at 10 kills.
+
+5) CHANGE ITEM DAMAGE / TIMES
+   File:  src/game/items.ts
+   BOMB_DMG = 1.5
+   BOMB_RANGE = 52
+   REVEAL_TIME = 10
+   SPEED_TIME = 8
+   HEAL_AMT = 2
+   DROP_CHANCE = 0.7     (0.7 = 70% drop when someone dies)
+
+6) 360 SWING / HIT RANGE
+   File:  src/game/engine.ts  (top of file)
+   HIT_RANGE = 42
+   SWING_TIME = 0.5
+
+7) MENU MUSIC
+   public/audio/menu.mp3

@@ -12,7 +12,7 @@
 // ============================================================
 
 export const ITEMS = [
-  { id: "bomb", name: "BOMB", file: "/sprites/items/bomb.png", color: "#d0483f" },
+  { id: "bomb", name: "BOMB", file: "/sprites/items/bomb.png", color: "#3fd063" },
   { id: "reveal", name: "SIGHT", file: "/sprites/items/reveal.png", color: "#5aa9ff" },
   { id: "heal", name: "HEAL", file: "/sprites/items/heal.png", color: "#e04b4b" },
   { id: "speed", name: "SPEED", file: "/sprites/items/speed.png", color: "#f0c040" },

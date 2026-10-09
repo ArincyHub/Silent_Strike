@@ -133,7 +133,7 @@ export class Music {
   constructor() {
     this.menu = makeAudio("/audio/menu.mp3", true);
     this.battle = makeAudio("/audio/battle.mp3", true);
-    this.vol = 0.4;
+    this.vol = 10;
   }
   setVolume(v) {
     this.vol = Math.max(0, Math.min(1, v * 0.5));
